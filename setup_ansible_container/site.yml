@@ -1,0 +1,13 @@
+- hosts: localhost
+  connection: local
+  become: yes
+  vars_files:
+    - conf.yml
+  tasks:
+    - name: Install deve packages
+      apt: name={{ item }} update_cache=yes
+      with_items: "{{ ansible.packages }}"
+
+    - name: Install pip ansible-container
+      pip: name={{ item }}
+      with_items: "{{ ansible.pip_packages }}"

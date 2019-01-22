@@ -1,0 +1,11 @@
+ansible:
+  packages:
+    - python-pip
+    - python-dev
+    - libffi-dev
+    - libssl-dev
+  pip_packages:
+    - ansible
+    - ansible-container
+    - docker
+    - docker-pycreds
